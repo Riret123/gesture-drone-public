@@ -1,0 +1,32 @@
+# Виртуальные окружения
+ai_env/
+ardupilot_env/
+venv/
+.venv/
+
+# ArduPilot — внешний репозиторий (клонируется отдельно)
+ardupilot/
+
+# Артефакты colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Артефакты SITL/MAVProxy, если появятся в корне
+*.tlog
+*.tlog.raw
+mav.parm
+eeprom.bin
+logs/
+terrain/
+
+# Редакторы / ОС
+.vscode/
+.idea/
+*.swp
+.DS_Store

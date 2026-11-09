@@ -1,0 +1,1 @@
+{"version":1,"frame":"local_enu","speed":0.2,"radius":20,"ceiling":5,"waypoints":[{"name":"rise","east":0,"north":0,"up":1,"dwell":1},{"name":"east","east":2,"north":0,"up":1,"dwell":1},{"name":"north","east":2,"north":2,"up":1,"dwell":1},{"name":"west","east":0,"north":2,"up":1,"dwell":1},{"name":"home_overhead","east":0,"north":0,"up":1,"dwell":1}]}

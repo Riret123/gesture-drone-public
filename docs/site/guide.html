@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Run the offline evidence - Gesture drone evidence</title>
+<meta name="description" content="Offline engineering evidence and limitations for a gesture-triggered drone prototype.">
+<link rel="stylesheet" href="site.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header><a class="brand" href="index.html">GESTURE / DRONE <span>engineering notebook</span></a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="guide.html" aria-current="page">Run offline</a><a href="engineering.html">Engineering</a><a href="safety.html">Safety</a><a href="portfolio.html">Portfolio</a><a href="ru.html">Русский</a></nav></header>
+<main id="content"><p class="eyebrow">NO ROS / NO CAMERA / NO AIRCRAFT</p><h1>Run the offline evidence</h1>
+<p class="lead">Use the repository root and the currently documented Python 3.12 environment. The portable suite uses the standard library.</p>
+<section aria-labelledby="commands"><h2 id="commands">Three safe entry points</h2><ol><li><code>python -B tests/run_all.py</code><p>Expected: named unittest results, final <code>OK</code>, exit code 0. The count changes as tests are added.</p></li><li><code>python -B tools/landing_faults.py</code><p>Expected: named proposal-level fault outcomes. Exit 0 means this limited campaign passed.</p></li><li><code>python -B tools/simulate_landings.py</code><p>Expected: JSON toy-model trial summary. A success rate here is a model result, not predicted aircraft reliability.</p></li></ol></section>
+<div class="notice"><strong>Keep test lanes separate.</strong> Do not substitute broad root discovery or the live bridge integration script. ROS package lint and isolated SITL are separate target tasks.</div>
+<section aria-labelledby="failure"><h2 id="failure">If something fails</h2><p>Record the exact command, Python version, failing test name and traceback. Fix the regression before treating the batch as accepted. Do not connect a flight controller, suppress the test or change network configuration to make an offline check pass.</p><p><a href="../company/devrel/OFFLINE_TROUBLESHOOTING.md">Troubleshooting decisions</a> | <a href="../company/devrel/OFFLINE_QUICKSTART.md">Detailed quickstart</a></p></section>
+<section aria-labelledby="audit"><h2 id="audit">Audit this site's source</h2><p><code>python -B tools/company_docs_audit.py</code> checks local HTML navigation, fragments, language labels and a static-content policy. It never fetches external URLs. Passing this check does not establish browser rendering or accessibility compliance.</p></section>
+<section aria-labelledby="target"><h2 id="target">Target deployment is a different step</h2><p>Orange Pi Linux/ARM dependencies, ROS Jazzy, colcon, camera APIs and physical wiring remain unverified here. Follow the target checklist only after reviewing prerequisites and isolating physical flight controllers for SITL.</p><p><a href="../TESTING_ON_BOARD.md">Target validation checklist</a> | <a href="../../AGENTS.md">Agent and build guide</a></p></section>
+</main>
+<footer><p>Local static documentation. No aircraft connection, command controls or external assets. Source checks do not prove hardware safety.</p><p><a href="../company/STATUS.md">Live run dashboard</a> | <a href="../company/LOG.md">Batch log</a> | <a href="../../README.md">Repository README</a></p></footer></body></html>

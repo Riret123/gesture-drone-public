@@ -1,0 +1,4 @@
+{"time":0,"mode":"SIM_HOLD","battery":80,"ack":"MOCK accepted; outcome unverified"}
+{"time":1,"mode":"SIM_HOLD","battery":79,"ack":""}
+{"time":3,"mode":"SIM_LAND_REQUEST","battery":78,"ack":"MOCK service result only"}
+{"time":3,"mode":"SIM_UNKNOWN","battery":78,"ack":""}

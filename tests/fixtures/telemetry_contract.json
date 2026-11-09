@@ -1,0 +1,382 @@
+[
+  {
+    "name": "valid_mock",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "MOCK",
+    "browser_status": "MOCK DATA"
+  },
+  {
+    "name": "valid_received",
+    "payload": {
+      "schema": 1,
+      "mock": false,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "RECEIVED",
+    "browser_status": "RECEIVED / UNVERIFIED"
+  },
+  {
+    "name": "valid_ru_emoji",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "\u0421\u0418\u041c / SIM \ud83d\ude81",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "MOCK",
+    "browser_status": "MOCK DATA"
+  },
+  {
+    "name": "valid_codepoint_limit",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "MOCK",
+    "browser_status": "MOCK DATA"
+  },
+  {
+    "name": "fresh_just_below",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0.5,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 1.499,
+    "python_status": "MOCK",
+    "browser_status": "MOCK DATA"
+  },
+  {
+    "name": "stale_at_limit",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0.5,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 1.5,
+    "python_status": "STALE",
+    "browser_status": "STALE"
+  },
+  {
+    "name": "bool_age",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": true,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "bool_battery",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": true,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "bad_deadman",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": 1,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "bad_mock",
+    "payload": {
+      "schema": 1,
+      "mock": "false",
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "schema_bool",
+    "payload": {
+      "schema": true,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "schema_unknown",
+    "payload": {
+      "schema": 2,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "unknown_field",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": [],
+      "command": "land"
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "mode_empty",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "mode_control",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM\nSAFE",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "mode_direction",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM\u202eSAFE",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "mode_surrogate",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "\ud800",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "mode_too_long",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81\ud83d\ude81",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "history_too_many",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": [
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x"
+      ]
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "ack_too_long",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": [
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ]
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "battery_low",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": -1,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "battery_high",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": 0,
+      "mode": "SIM",
+      "battery": 101,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  },
+  {
+    "name": "negative_age",
+    "payload": {
+      "schema": 1,
+      "mock": true,
+      "age": -1,
+      "mode": "SIM",
+      "battery": 50,
+      "deadman": false,
+      "acks": []
+    },
+    "elapsed": 0,
+    "python_status": "INVALID",
+    "browser_status": "INVALID"
+  }
+]

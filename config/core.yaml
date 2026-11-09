@@ -1,0 +1,24 @@
+# ROS 2 parameter file. Defaults preserve existing values except the new state guard.
+gesture_node:
+  ros__parameters:
+    debounce_frames: 5
+    hold_after_sec: 2.0
+    land_after_sec: 5.0
+    curl_ratio: 1.1
+    camera_index: 0
+    camera_width: 640
+    camera_height: 480
+    camera_fps: 30.0
+    model_complexity: 0
+    pose_profile_path: ""
+    frame_budget_ms: 200.0
+    detection_confidence: 0.6
+    tracking_confidence: 0.5
+flight_cmd_bridge:
+  ros__parameters:
+    state_max_age_sec: 2.0
+    gesture_watchdog_sec: 3.0
+    service_wait_timeout_sec: 5.0
+    service_call_timeout_sec: 5.0
+    state_transition_timeout_sec: 5.0
+    takeoff_altitude_m: 2.0

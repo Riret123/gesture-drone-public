@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interfaces before integration - Gesture drone evidence</title>
+<meta name="description" content="Offline engineering evidence and limitations for a gesture-triggered drone prototype.">
+<link rel="stylesheet" href="site.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header><a class="brand" href="index.html">GESTURE / DRONE <span>engineering notebook</span></a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="guide.html">Run offline</a><a href="engineering.html" aria-current="page">Engineering</a><a href="safety.html">Safety</a><a href="portfolio.html">Portfolio</a><a href="ru.html">Русский</a></nav></header>
+<main id="content"><p class="eyebrow">SOURCE-LINKED / OFFLINE BY DEFAULT</p><h1>Interfaces before integration</h1>
+<p class="lead">Policies produce values. Adapters create operational effects. The missing connection is an explicit engineering boundary.</p>
+<section aria-labelledby="contracts"><h2 id="contracts">Contracts worth inspecting</h2><div class="table-wrap"><table><caption>Representative offline interfaces, not a list of live safeguards</caption><thead><tr><th>Area</th><th>Question</th><th>Source</th></tr></thead><tbody>
+<tr><td>Mission JSON</td><td>Are version, frame, unknown keys and resource bounds explicit?</td><td><a href="../../src/gesture_control/gesture_control/mission_schema.py">mission_schema.py</a></td></tr>
+<tr><td>Mission simulation</td><td>Which kinematic and timing assumptions limit the trace?</td><td><a href="../../src/gesture_control/gesture_control/mission_simulation.py">mission_simulation.py</a></td></tr>
+<tr><td>Tag observations</td><td>What evidence makes a pose usable, and what is missing?</td><td><a href="../../src/gesture_control/gesture_control/landing_observation.py">landing_observation.py</a></td></tr>
+<tr><td>Telemetry</td><td>Are mock, invalid, stale and disconnected states distinct?</td><td><a href="../../src/gesture_control/gesture_control/telemetry_contract.py">telemetry_contract.py</a></td></tr>
+<tr><td>Replay</td><td>Can data be inspected without republishing commands?</td><td><a href="../../src/gesture_control/gesture_control/recording.py">recording.py</a></td></tr>
+<tr><td>Power budget</td><td>Do unknown ratings remain unknown instead of passing?</td><td><a href="../../src/gesture_control/gesture_control/energy_budget.py">energy_budget.py</a></td></tr>
+</tbody></table></div></section>
+<section aria-labelledby="frame"><h2 id="frame">Frames, clocks and identities</h2><p>A waypoint's numbers are not meaningful without a coordinate origin and convention. Mission v1 uses local ENU; this does not establish a calibrated aircraft home. A receive timestamp is not a synchronized sensor timestamp. A vehicle or session identifier is not authentication.</p><p><a href="../company/architect/round01.md">Mission contract decisions</a> | <a href="../company/architect/ORIGIN_AND_TRUST.md">Origin and trust model</a></p></section>
+<section aria-labelledby="faults"><h2 id="faults">Failure evidence matters</h2><p>Review how a module treats invalid numbers, booleans masquerading as numbers, duplicate JSON fields, stale observations and mutable snapshots. Ask whether a rejection preserves prior authority or invalidates it. A test should show the intended behavior at a boundary.</p><p><a href="../ARCHITECTURE.md">Repository architecture</a> | <a href="../OFFLINE_POLICIES.md">Offline-policy limits</a> | <a href="../company/ceo/REVIEW_GATES.md">Review gates</a></p></section>
+</main>
+<footer><p>Local static documentation. No aircraft connection, command controls or external assets. Source checks do not prove hardware safety.</p><p><a href="../company/STATUS.md">Live run dashboard</a> | <a href="../company/LOG.md">Batch log</a> | <a href="../../README.md">Repository README</a></p></footer></body></html>

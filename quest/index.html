@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quest drone camera — view only</title>
+<style>
+:root { color-scheme: dark; font: 20px system-ui; background: #071018; color: #e7f5ff }
+body { margin: 0; } header, footer { padding: 1rem; } form { display:flex; gap:.5rem; flex-wrap:wrap }
+input,button { font:inherit; padding:.6rem; } input { flex:1; min-width:12rem }
+main { display:grid; place-items:center; min-height:60vh; background:black }
+img { width:100%; max-height:75vh; object-fit:contain; } .badge { color:#ffc857 }
+</style>
+<header><h1>Drone camera</h1><p class="badge">VIEW ONLY · No flight controls · Stream latency unknown</p>
+<form id="connect"><label for="source">MJPEG URL</label>
+<input id="source" type="url" required aria-label="MJPEG stream URL">
+<button>Connect</button><button type="button" id="fullscreen">Fullscreen</button></form>
+<p id="status" role="status">Disconnected. Video is not flight telemetry.</p></header>
+<main><img id="video" alt="Drone MJPEG camera stream"></main>
+<footer>Use an independent pilot and flight controls. A frozen frame may look live.</footer>
+
+<section aria-label="Telemetry" id="telemetry">
+<h2>Telemetry · <span id="link">OFFLINE</span></h2>
+<p>Mode: <output id="mode">unknown</output> · Battery: <output id="battery">unknown</output>
+ · Deadman: <output id="deadman">unknown</output></p>
+<p id="telemetry-note">No telemetry received. This display sends no commands.</p>
+</section>
+<script src="/telemetry_ui.js" defer></script>
+
+<script>
+'use strict';
+const source = document.querySelector('#source');
+const video = document.querySelector('#video');
+const status = document.querySelector('#status');
+source.value = `http://${location.hostname || '192.168.4.1'}:8080/stream`;
+document.querySelector('#connect').addEventListener('submit', event => {
+  event.preventDefault();
+  const url = new URL(source.value);
+  if (!['http:', 'https:'].includes(url.protocol)) return;
+  status.textContent = 'Connecting; freshness and latency are not measured.';
+  video.src = url.href;
+});
+video.addEventListener('load', () => { status.textContent = 'Stream loaded; freshness is not verified.'; });
+video.addEventListener('error', () => { status.textContent = 'Stream unavailable. Check camera and URL.'; });
+document.querySelector('#fullscreen').addEventListener('click', async () => {
+  try { await document.documentElement.requestFullscreen(); }
+  catch { status.textContent = 'Fullscreen unavailable in this browser.'; }
+});
+</script>
+</html>

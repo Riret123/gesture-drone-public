@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engineering you can inspect - Gesture drone evidence</title>
+<meta name="description" content="Offline engineering evidence and limitations for a gesture-triggered drone prototype.">
+<link rel="stylesheet" href="site.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header><a class="brand" href="index.html">GESTURE / DRONE <span>engineering notebook</span></a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="guide.html">Run offline</a><a href="engineering.html">Engineering</a><a href="safety.html">Safety</a><a href="portfolio.html">Portfolio</a><a href="ru.html">Русский</a></nav></header>
+<main id="content"><p class="eyebrow">PORTABLE LOGIC / EXPLICIT LIMITS</p><h1>Engineering you can inspect</h1>
+<p class="lead">A camera-to-ROS gesture prototype, with separate Python experiments for moving landing platforms, mission validation and failure analysis.</p>
+<div class="notice"><strong>Evidence boundary:</strong> this site describes offline software and designs. It does not demonstrate general autonomous navigation, validated precision landing or a flight-ready product.</div>
+<section aria-labelledby="start"><h2 id="start">Start with a reproducible question</h2><div class="cards">
+<article><p class="tag">01 / REPRODUCE</p><h3>Can I exercise it without an aircraft?</h3><p>Run standard-library tests and toy fault scenarios from Windows or Linux.</p><a href="guide.html">Open the offline guide </a></article>
+<article><p class="tag">02 / UNDERSTAND</p><h3>Where does a proposal become a request?</h3><p>Inspect the live ROS boundary and the disconnected experiment layer.</p><a href="engineering.html">Read the interfaces </a></article>
+<article><p class="tag">03 / CHALLENGE</p><h3>What is still unverified?</h3><p>Review acknowledgements, stale data, model limitations and target blockers.</p><a href="safety.html">Read the safety limits </a></article></div></section>
+<section aria-labelledby="map"><h2 id="map">Two paths, different evidence</h2><pre class="flow">EXISTING ROS PATH
+camera / landmarks / gesture policy / /flight_cmd
+                                     ?
+                            MAVROS service requests
+
+OFFLINE EXPERIMENTS
+fixtures / pure policies / proposals / traces / reports
+                         no actuation connection</pre>
+<p>The existing path can request GUIDED, arming and takeoff, or landing/hold. Do not run it against real motors. New mission, landing, battery and arbitration experiments do not add protections to that path.</p></section>
+<section aria-labelledby="review"><h2 id="review">What a reviewer should look for</h2><ul><li>Named input units, coordinate frames and clock assumptions.</li><li>Rejected malformed, stale or ambiguous data.</li><li>Tests tied to failure behavior rather than a polished screenshot.</li><li>Personal contribution and AI assistance stated honestly.</li></ul><p><a href="portfolio.html">See portfolio evidence and next projects</a>.</p></section>
+</main>
+<footer><p>Local static documentation. No aircraft connection, command controls or external assets. Source checks do not prove hardware safety.</p><p><a href="../company/STATUS.md">Live run dashboard</a> | <a href="../company/LOG.md">Batch log</a> | <a href="../../README.md">Repository README</a></p></footer></body></html>

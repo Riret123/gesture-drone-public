@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gesture drone · telemetry</title>
+<style>
+:root{color-scheme:dark;font:18px system-ui;background:#09141d;color:#e2f0f5}
+body{max-width:65rem;margin:auto;padding:2rem} h1{font-size:clamp(2rem,6vw,4rem)}
+section{border:1px solid #3a626c;padding:1.5rem;border-radius:1rem;margin:1rem 0}
+output{color:#8de0cf} #link{color:#ffcd79} li{padding:.5rem;overflow-wrap:anywhere}
+</style>
+<header><p>GESTURE DRONE / OBSERVABILITY</p><h1>Flight status</h1>
+<p>Read-only development display. Service acknowledgements do not confirm flight completion.</p></header>
+
+<section aria-label="Telemetry" id="telemetry">
+<h2>Telemetry · <span id="link">OFFLINE</span></h2>
+<p>Mode: <output id="mode">unknown</output> · Battery: <output id="battery">unknown</output>
+ · Deadman: <output id="deadman">unknown</output></p>
+<p id="telemetry-note">No telemetry received. This display sends no commands.</p>
+</section>
+<script src="/telemetry_ui.js" defer></script>
+
+<section><h2>/flight_cmd_ack history</h2><ol id="acks" aria-live="polite"></ol>
+<p id="history-note">At most 30 received entries. Retained history may be stale.</p></section>
+<footer>No flight controls. Keep an independent pilot and FC failsafes.</footer></html>

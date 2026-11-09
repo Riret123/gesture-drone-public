@@ -1,0 +1,15 @@
+# Template only. Copy to ~/.config/systemd/user after reviewing paths.
+# No [Install] section: these units are intentionally not enabled at boot.
+[Unit]
+Description=Gesture drone component %i (manual start)
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/gesture-drone/core.env
+ExecStart=/bin/bash ${DRONE_WORKSPACE}/scripts/board/core.sh run %i
+Restart=no
+KillMode=control-group
+TimeoutStopSec=10
+UMask=0077
+NoNewPrivileges=true
+
